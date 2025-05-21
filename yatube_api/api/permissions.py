@@ -1,10 +1,12 @@
 from rest_framework.permissions import BasePermission, SAFE_METHODS
 
+
 class IsAuthorOrReadOnly(BasePermission):
     """
-    Позволяет редактировать/удалять только автору объекта, 
+    Позволяет редактировать/удалять только автору объекта,
     всем остальным — только чтение.
     """
+
     def has_permission(self, request, view):
         return True  # листинг и создание проверяется на уровне view
 
